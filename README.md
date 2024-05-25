@@ -3,7 +3,7 @@
 
 &#xa0;
 
-  <img src="./public/temp-banner.pg" alt="preview" />
+  <img src="./public/temp-banner.png" alt="preview" />
 
 <a href="https://jj-zapflow.vercel.app/">Demo</a>
 
