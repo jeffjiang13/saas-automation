@@ -9,6 +9,7 @@ import {
 } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useMediaQuery } from 'react-responsive'
 
 export const HeroParallax = ({
   products,
@@ -28,14 +29,16 @@ export const HeroParallax = ({
     offset: ['start start', 'end start'],
   })
 
+  const isDesktop = useMediaQuery({ query: '(min-width: 768px)' })
+
   const springConfig = { stiffness: 300, damping: 30, bounce: 100 }
 
   const translateX = useSpring(
-    useTransform(scrollYProgress, [0, 1], [0, 1000]),
+    useTransform(scrollYProgress, [0, 1], [0, isDesktop ? 1000 : 1]),
     springConfig
   )
   const translateXReverse = useSpring(
-    useTransform(scrollYProgress, [0, 1], [0, -1000]),
+    useTransform(scrollYProgress, [0, 1], [0, isDesktop ? -1000 : -1]),
     springConfig
   )
   const rotateX = useSpring(
@@ -51,9 +54,10 @@ export const HeroParallax = ({
     springConfig
   )
   const translateY = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [-700, 500]),
+    useTransform(scrollYProgress, [0, 0.2], [-700, isDesktop ? 500 : -30]),
     springConfig
   )
+
   return (
     <div
       ref={ref}

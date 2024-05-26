@@ -26,14 +26,14 @@ export default function Home() {
                   href="/dashboard">
                   <Button
                     size={'lg'}
-                    className="p-8 mb-8 md:mb-0 text-2xl w-full sm:w-fit dark:border-t-2 rounded-full dark:border-[#4D4D4D] bg-gray-200 dark:bg-[#1F1F1F] hover:bg-[#8c73ff] dark:hover:bg-white group transition-all flex items-center justify-center gap-4 hover:shadow-xl hover:shadow-neutral-500 duration-500"
+                    className="p-4 md:p-8 mb-8 md:mb-0 text-lg md:text-2xl w-full sm:w-fit dark:border-t-2 rounded-full dark:border-[#4D4D4D] bg-gray-200 dark:bg-[#1F1F1F] hover:bg-[#8c73ff] dark:hover:bg-white group transition-all flex items-center justify-center gap-4 hover:shadow-xl hover:shadow-neutral-500 duration-500"
                     >
-                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-neutral-500 to-neutral-600  md:text-center font-sans group-hover:bg-gradient-to-r group-hover:from-black goup-hover:to-black">
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-neutral-500 to-neutral-600 md:text-center font-sans group-hover:bg-gradient-to-r group-hover:from-black goup-hover:to-black">
                     Start For Free Today
                   </span>
                 </Button>
                 </Link>
-                <h1 className=" mb-10 text-5xl md:text-8xl bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-600 font-sans font-bold">
+                <h1 className="mb-10 text-5xl md:text-8xl bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-600 font-sans font-bold">
                   Automate Your Work With ZapFlow
                 </h1>
               </div>
@@ -42,13 +42,13 @@ export default function Home() {
         </div>
       </section>
       <InfiniteMovingCards
-        className="md:mt-[27rem] mt-[-100px]"
+        className="md:mt-[27rem] mt-[-150px]"
         items={clients}
         direction="right"
         speed="slow"
       />
       <InfiniteMovingCards
-        className="md:mt-[1rem] mt-[-150px]"
+        className="md:mt-[1rem] mt-[-150px] mb-10 md:mb-0"
         items={clients}
         direction="left"
         speed="slow"
@@ -59,7 +59,7 @@ export default function Home() {
       <section className="mt-[-500px]">
         <LampComponent />
         <div className="flex flex-wrap items-center justify-center flex-col md:flex-row gap-8 -mt-72">
-          <CardContainer className="inter-var ">
+          <CardContainer className="inter-var">
             <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-neutral-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-[300px] md:!w-[350px] h-auto rounded-xl p-6 border">
               <CardItem
                 translateZ="50"
@@ -88,6 +88,7 @@ export default function Home() {
                   </li>
                 </ul>
               </CardItem>
+              <Link href="/billing">
               <div className="flex justify-between items-center mt-8">
                 <CardItem
                   translateZ={20}
@@ -104,6 +105,7 @@ export default function Home() {
                   Get Started Now
                 </CardItem>
               </div>
+              </Link>
             </CardBody>
           </CardContainer>
           <CardContainer className="inter-var ">
@@ -134,6 +136,7 @@ export default function Home() {
                   </li>
                 </ul>
               </CardItem>
+              <Link href="/billing">
               <div className="flex justify-between items-center mt-8">
                 <CardItem
                   translateZ={20}
@@ -150,6 +153,7 @@ export default function Home() {
                   Get Started Now
                 </CardItem>
               </div>
+              </Link>
             </CardBody>
           </CardContainer>
           <CardContainer className="inter-var ">
@@ -180,6 +184,7 @@ export default function Home() {
                   </li>
                 </ul>
               </CardItem>
+              <Link href="/billing">
               <div className="flex justify-between items-center mt-8">
                 <CardItem
                   translateZ={20}
@@ -196,6 +201,7 @@ export default function Home() {
                   Get Started Now
                 </CardItem>
               </div>
+              </Link>
             </CardBody>
           </CardContainer>
         </div>

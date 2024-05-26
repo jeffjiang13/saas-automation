@@ -40,7 +40,7 @@ const Navbar = ({ user }: Props) => {
       <nav className="hidden md:block">
         <ul className="flex items-center gap-6 list-none">
           <li>
-            <Link className="hover:text-gray-500" href="#">Products</Link>
+            <Link className="hover:text-gray-500" href="/products">Products</Link>
           </li>
           <li>
             <Link className="hover:text-gray-500" href="#">Pricing</Link>
