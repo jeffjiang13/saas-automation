@@ -13,8 +13,7 @@ export function LampComponent() {
     setMounted(true);
   }, []);
 
-  if (!mounted) return null; // Avoid rendering until the component is mounted
-
+  if (!mounted) return null;
   const textClasses =
     theme === 'light'
       ? 'animate-text bg-gradient-to-r from-purple-100 via-purple-500 to-purple-950 bg-clip-text text-transparent font-black'

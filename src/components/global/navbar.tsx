@@ -40,26 +40,26 @@ const Navbar = ({ user }: Props) => {
       <nav className="hidden md:block">
         <ul className="flex items-center gap-6 list-none">
           <li>
-            <Link className="hover:text-gray-500" href="/products">Products</Link>
+            <Link className="hover:text-gray-300" href="/products">Products</Link>
           </li>
           <li>
-            <Link className="hover:text-gray-500" href="#">Pricing</Link>
+            <Link className="hover:text-gray-300" href="pricing">Pricing</Link>
           </li>
           <li>
-            <Link className="hover:text-gray-500" href="#">Clients</Link>
+            <Link className="hover:text-gray-300" href="/clients">Clients</Link>
           </li>
           <li>
-            <Link className="hover:text-gray-500" href="#">Resources</Link>
+            <Link className="hover:text-gray-300" href="#">Resources</Link>
           </li>
           <li>
-            <Link className="hover:text-gray-500" href="#">Documentation</Link>
+            <Link className="hover:text-gray-300" href="#">Documentation</Link>
           </li>
           <li>
-            <Link className="hover:text-gray-500" href="#">Enterprise</Link>
+            <Link className="hover:text-gray-300" href="#">Enterprise</Link>
           </li>
         </ul>
       </nav>
-      <aside className="flex items-center gap-2 md:gap-3">
+      <aside className="flex items-center gap-1 md:gap-3">
         <Link
           href="/dashboard"
           className="relative inline-flex h-10 overflow-hidden rounded-full p-[2px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
