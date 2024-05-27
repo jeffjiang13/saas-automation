@@ -1,8 +1,10 @@
 import React from 'react';
+import Image from 'next/image';
 import Footer from '@/components/global/footer';
 import Navbar from '@/components/global/NavbarWrapper';
 
-export const clients = [...new Array(10)].map((_, index) => ({
+// Define clients within the module but do not export it
+const clients = [...new Array(10)].map((_, index) => ({
   href: `/${index + 1}.png`,
 }));
 
@@ -14,11 +16,12 @@ const ClientsPage: React.FC = () => {
         <h1 className="text-3xl font-bold mb-8 text-center">Our Clients</h1>
         <div className="flex flex-wrap justify-center gap-4">
           {clients.map((client, index) => (
-            <div key={index} className="p-7 w-100% h-30 bg-black rounded-lg overflow-hidden">
-              <img
+            <div key={index} className="w-40 h-40 bg-gray-200 rounded-lg overflow-hidden">
+              <Image
                 src={client.href}
                 alt={`Client ${index + 1}`}
-                className="object-cover w-full h-full"
+                layout="fill"
+                objectFit="cover"
               />
             </div>
           ))}
