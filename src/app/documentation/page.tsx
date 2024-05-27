@@ -1,7 +1,9 @@
+// pages/documentation.tsx
 import React from 'react';
+import Link from 'next/link';
 import Footer from '@/components/global/footer';
 import Navbar from '@/components/global/NavbarWrapper';
-import Link from 'next/link';
+
 const DocumentationPage: React.FC = () => {
   return (
     <main className="flex flex-col items-center justify-center mt-20">
@@ -19,8 +21,8 @@ const DocumentationPage: React.FC = () => {
           <p>Creating your first automation in ZapFlow is simple. Follow these steps:</p>
           <ol className="list-decimal pl-6 space-y-2">
             <li>Log in to your ZapFlow account.</li>
-            <li>Navigate to the 'Automations' section from the dashboard.</li>
-            <li>Click on 'Create New Automation'.</li>
+            <li>Navigate to the &apos;Automations&apos; section from the dashboard.</li>
+            <li>Click on &apos;Create New Automation&apos;.</li>
             <li>Select a trigger event from the list of available options.</li>
             <li>Add actions to be performed when the trigger event occurs.</li>
             <li>Save your automation and activate it.</li>
@@ -29,7 +31,7 @@ const DocumentationPage: React.FC = () => {
           <h3 className="text-xl font-semibold mb-2">Connecting Services</h3>
           <p>ZapFlow allows you to connect various services like Google Drive, Slack, Discord, and Notion. To connect a service:</p>
           <ol className="list-decimal pl-6 space-y-2">
-            <li>Go to the 'Integrations' section in the dashboard.</li>
+            <li>Go to the &apos;Integrations&apos; section in the dashboard.</li>
             <li>Select the service you want to connect.</li>
             <li>Follow the on-screen instructions to authenticate and authorize the connection.</li>
             <li>Once connected, you can use the service in your automations.</li>
@@ -42,7 +44,7 @@ const DocumentationPage: React.FC = () => {
 
           <h3 className="text-xl font-semibold mb-2">Authentication</h3>
           <p>To use the ZapFlow API, you need to authenticate using an API key. Include the API key in the header of your requests as follows:</p>
-          <pre className="bg-accent p-4 rounded-md mb-4"><code>Authorization: Bearer YOUR_API_KEY</code></pre>
+          <pre className="bg-gray-100 p-4 rounded-md mb-4"><code>Authorization: Bearer YOUR_API_KEY</code></pre>
 
           <h3 className="text-xl font-semibold mb-2">API Endpoints</h3>
           <p>ZapFlow provides various API endpoints to manage your automations, integrations, and more. Here are some common endpoints:</p>
@@ -64,8 +66,8 @@ const DocumentationPage: React.FC = () => {
           <h3 className="text-xl font-semibold mb-2">Google Drive Integration</h3>
           <p>To integrate Google Drive with ZapFlow:</p>
           <ol className="list-decimal pl-6 space-y-2">
-            <li>Go to the 'Integrations' section in the dashboard.</li>
-            <li>Select 'Google Drive' from the list of available integrations.</li>
+            <li>Go to the &apos;Integrations&apos; section in the dashboard.</li>
+            <li>Select &apos;Google Drive&apos; from the list of available integrations.</li>
             <li>Authenticate with your Google account and grant necessary permissions.</li>
             <li>Once connected, you can use Google Drive triggers and actions in your automations.</li>
           </ol>
@@ -73,8 +75,8 @@ const DocumentationPage: React.FC = () => {
           <h3 className="text-xl font-semibold mb-2">Slack Integration</h3>
           <p>To integrate Slack with ZapFlow:</p>
           <ol className="list-decimal pl-6 space-y-2">
-            <li>Go to the 'Integrations' section in the dashboard.</li>
-            <li>Select 'Slack' from the list of available integrations.</li>
+            <li>Go to the &apos;Integrations&apos; section in the dashboard.</li>
+            <li>Select &apos;Slack&apos; from the list of available integrations.</li>
             <li>Authenticate with your Slack account and grant necessary permissions.</li>
             <li>Once connected, you can use Slack triggers and actions in your automations.</li>
           </ol>
@@ -82,8 +84,8 @@ const DocumentationPage: React.FC = () => {
           <h3 className="text-xl font-semibold mb-2">Discord Integration</h3>
           <p>To integrate Discord with ZapFlow:</p>
           <ol className="list-decimal pl-6 space-y-2">
-            <li>Go to the 'Integrations' section in the dashboard.</li>
-            <li>Select 'Discord' from the list of available integrations.</li>
+            <li>Go to the &apos;Integrations&apos; section in the dashboard.</li>
+            <li>Select &apos;Discord&apos; from the list of available integrations.</li>
             <li>Authenticate with your Discord account and grant necessary permissions.</li>
             <li>Once connected, you can use Discord triggers and actions in your automations.</li>
           </ol>
@@ -91,8 +93,8 @@ const DocumentationPage: React.FC = () => {
           <h3 className="text-xl font-semibold mb-2">Notion Integration</h3>
           <p>To integrate Notion with ZapFlow:</p>
           <ol className="list-decimal pl-6 space-y-2">
-            <li>Go to the 'Integrations' section in the dashboard.</li>
-            <li>Select 'Notion' from the list of available integrations.</li>
+            <li>Go to the &apos;Integrations&apos; section in the dashboard.</li>
+            <li>Select &apos;Notion&apos; from the list of available integrations.</li>
             <li>Authenticate with your Notion account and grant necessary permissions.</li>
             <li>Once connected, you can use Notion triggers and actions in your automations.</li>
           </ol>
@@ -142,15 +144,15 @@ const DocumentationPage: React.FC = () => {
 
           <h3 className="text-xl font-semibold mb-2">Technical Questions</h3>
           <p><strong>Q: How do I integrate new services?</strong></p>
-          <p>A: You can integrate new services by navigating to the 'Integrations' section in your dashboard and following the on-screen instructions.</p>
+          <p>A: You can integrate new services by navigating to the &apos;Integrations&apos; section in your dashboard and following the on-screen instructions.</p>
         </section>
 
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4">Support</h2>
           <p className="mb-4">If you need further assistance, please visit our support page or contact us directly.</p>
-          <p>Email: <Link href="mailto:support@yourproject.com" className="text-blue-500 hover:underline">support@yourproject.com</Link></p>
-          <p>Phone: <Link href="tel:+1234567890" className="text-blue-500 hover:underline">+1 (234) 567-890</Link></p>
-          <p>Support Center: <Link href="https://support.yourproject.com" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Visit our Support Center</Link></p>
+          <p>Email: <Link href="mailto:support@yourproject.com"><span className="text-blue-500 hover:underline">support@yourproject.com</span></Link></p>
+          <p>Phone: <Link href="tel:+1234567890"><span className="text-blue-500 hover:underline">+1 (234) 567-890</span></Link></p>
+          <p>Support Center: <Link href="https://support.yourproject.com" passHref><span className="text-blue-500 hover:underline"  rel="noopener noreferrer">Visit our Support Center</span></Link></p>
         </section>
       </div>
       <Footer />
