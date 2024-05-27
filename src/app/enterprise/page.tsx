@@ -43,9 +43,9 @@ const EnterprisePage: React.FC = () => {
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4">Contact Us</h2>
           <p className="mb-4">Interested in our Enterprise plan? Get in touch with us to discuss your requirements and get a personalized demo.</p>
-          <p className="mb-4">Email: <Link href="mailto:enterprise@yourproject.com"><span className="text-blue-500 hover:underline">enterprise@yourproject.com</span></Link></p>
+          <p className="mb-4">Email: <Link href="mailto:jeff.jiang13@gmail.com"><span className="text-blue-500 hover:underline">jeff.jiang13@gmail.com</span></Link></p>
           <p className="mb-4">Phone: <Link href="tel:+1234567890"><span className="text-blue-500 hover:underline">+1 (234) 567-890</span></Link></p>
-          <p className="mb-4">Or fill out our <Link href="https://yourproject.com/contact" passHref><span className="text-blue-500 hover:underline" rel="noopener noreferrer">contact form</span></Link> and we will get back to you shortly.</p>
+          <p className="mb-4">Or fill out our <Link href="https://jeff-jiang.com/#contact" passHref><span className="text-blue-500 hover:underline" rel="noopener noreferrer">contact form</span></Link> and we will get back to you shortly.</p>
         </section>
 
         <section className="mb-8">
@@ -53,18 +53,18 @@ const EnterprisePage: React.FC = () => {
           <p className="mb-4">See how our Enterprise clients are using ZapFlow to transform their business operations.</p>
           <ul className="list-disc pl-6 space-y-2">
             <li>
-              <Link href="https://docs.yourproject.com/case-studies/company1" passHref>
-                <span className="text-blue-500 hover:underline" rel="noopener noreferrer">Company 1 Case Study</span>
+              <Link href="https://jj-tailortech.vercel.app/" passHref>
+                <span className="text-blue-500 hover:underline" rel="noopener noreferrer">TailerTech</span>
               </Link>
             </li>
             <li>
-              <Link href="https://docs.yourproject.com/case-studies/company2" passHref>
-                <span className="text-blue-500 hover:underline" rel="noopener noreferrer">Company 2 Case Study</span>
+              <Link href="https://jj-newsletter.vercel.app/" passHref>
+                <span className="text-blue-500 hover:underline" rel="noopener noreferrer">BeeClone</span>
               </Link>
             </li>
             <li>
-              <Link href="https://docs.yourproject.com/case-studies/company3" passHref>
-                <span className="text-blue-500 hover:underline" rel="noopener noreferrer">Company 3 Case Study</span>
+              <Link href="https://jj-matrix-ai.vercel.app/" passHref>
+                <span className="text-blue-500 hover:underline" rel="noopener noreferrer">MatrixAI</span>
               </Link>
             </li>
           </ul>

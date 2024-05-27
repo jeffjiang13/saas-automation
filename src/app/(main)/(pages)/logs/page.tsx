@@ -110,7 +110,7 @@ const LogsPage = async (props: Props) => {
       </h1>
       <div className="relative flex flex-col gap-3 p-6">
         <section className="flex flex-col gap-3">
-          <div className="p-6 shadow rounded-lg border bg-white">
+          <div className="p-6 shadow rounded-lg border">
             <h3 className="text-xl font-semibold mb-4">User Information</h3>
             <p><strong>Name:</strong> {user_info?.name}</p>
             <p><strong>Email:</strong> {user_info?.email}</p>
@@ -120,7 +120,7 @@ const LogsPage = async (props: Props) => {
             <p><strong>Created At:</strong> {user_info?.createdAt ? new Date(user_info.createdAt).toLocaleString() : 'N/A'}</p>
             <p><strong>Updated At:</strong> {user_info?.updatedAt ? new Date(user_info.updatedAt).toLocaleString() : 'N/A'}</p>
           </div>
-          <div className="p-6 shadow rounded-lg border bg-white">
+          <div className="p-6 shadow rounded-lg border">
             <h3 className="text-xl font-semibold mb-4">Connections</h3>
             <p><strong>Total Connections:</strong> {connectionCount}</p>
             <ul>
@@ -134,7 +134,7 @@ const LogsPage = async (props: Props) => {
               ))}
             </ul>
           </div>
-          <div className="p-6 shadow rounded-lg border bg-white">
+          <div className="p-6 shadow rounded-lg border">
             <h3 className="text-xl font-semibold mb-4">Workflows</h3>
             <p><strong>Total Workflows:</strong> {user_info?.workflows.length}</p>
             <ul>

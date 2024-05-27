@@ -13,21 +13,21 @@ const ResourcesPage: React.FC = () => {
           <h2 className="text-2xl font-semibold mb-4">Documentation</h2>
           <ul className="list-disc pl-6 space-y-2">
             <li>
-              <Link href="https://docs.yourproject.com/getting-started">
+              <Link href="/documentation">
                 <span className="text-blue-500 hover:underline" rel="noopener noreferrer">
                   Getting Started
                 </span>
               </Link>
             </li>
             <li>
-              <Link href="https://docs.yourproject.com/api-reference">
+              <Link href="/documentation">
                 <span className="text-blue-500 hover:underline" rel="noopener noreferrer">
                   API Reference
                 </span>
               </Link>
             </li>
             <li>
-              <Link href="https://docs.yourproject.com/integration-guides">
+              <Link href="/documentation">
                 <span className="text-blue-500 hover:underline" rel="noopener noreferrer">
                   Integration Guides
                 </span>
@@ -39,21 +39,21 @@ const ResourcesPage: React.FC = () => {
           <h2 className="text-2xl font-semibold mb-4">Tutorials</h2>
           <ul className="list-disc pl-6 space-y-2">
             <li>
-              <Link href="https://docs.yourproject.com/tutorials/create-first-automation">
+              <Link href="/documentation">
                 <span className="text-blue-500 hover:underline" rel="noopener noreferrer">
                   Create Your First Automation
                 </span>
               </Link>
             </li>
             <li>
-              <Link href="https://docs.yourproject.com/tutorials/advanced-features">
+              <Link href="/documentation">
                 <span className="text-blue-500 hover:underline" rel="noopener noreferrer">
                   Advanced Features
                 </span>
               </Link>
             </li>
             <li>
-              <Link href="https://docs.yourproject.com/tutorials/best-practices">
+              <Link href="/documentation">
                 <span className="text-blue-500 hover:underline" rel="noopener noreferrer">
                   Best Practices
                 </span>
@@ -65,21 +65,21 @@ const ResourcesPage: React.FC = () => {
           <h2 className="text-2xl font-semibold mb-4">Support</h2>
           <ul className="list-disc pl-6 space-y-2">
             <li>
-              <Link href="https://support.yourproject.com">
+              <Link href="https://jeff-jiang.com/#contact">
                 <span className="text-blue-500 hover:underline" rel="noopener noreferrer">
                   Support Center
                 </span>
               </Link>
             </li>
             <li>
-              <Link href="https://community.yourproject.com">
+              <Link href="https://jeff-jiang.com/#contact">
                 <span className="text-blue-500 hover:underline" rel="noopener noreferrer">
                   Community Forums
                 </span>
               </Link>
             </li>
             <li>
-              <Link href="https://contact.yourproject.com">
+              <Link href="https://jeff-jiang.com/#contact">
                 <span className="text-blue-500 hover:underline" rel="noopener noreferrer">
                   Contact Us
                 </span>
@@ -91,21 +91,21 @@ const ResourcesPage: React.FC = () => {
           <h2 className="text-2xl font-semibold mb-4">Other Resources</h2>
           <ul className="list-disc pl-6 space-y-2">
             <li>
-              <Link href="https://blog.yourproject.com">
+              <Link href="https://jeff-jiang.com">
                 <span className="text-blue-500 hover:underline" rel="noopener noreferrer">
                   Blog
                 </span>
               </Link>
             </li>
             <li>
-              <Link href="https://news.yourproject.com">
+              <Link href="https://jeff-jiang.com">
                 <span className="text-blue-500 hover:underline" rel="noopener noreferrer">
                   News & Updates
                 </span>
               </Link>
             </li>
             <li>
-              <Link href="https://events.yourproject.com">
+              <Link href="https://jeff-jiang.com">
                 <span className="text-blue-500 hover:underline" rel="noopener noreferrer">
                   Events & Webinars
                 </span>
