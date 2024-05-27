@@ -44,7 +44,7 @@ const DocumentationPage: React.FC = () => {
 
           <h3 className="text-xl font-semibold mb-2">Authentication</h3>
           <p>To use the ZapFlow API, you need to authenticate using an API key. Include the API key in the header of your requests as follows:</p>
-          <pre className="bg-gray-100 p-4 rounded-md mb-4"><code>Authorization: Bearer YOUR_API_KEY</code></pre>
+          <pre className="bg-accent p-4 rounded-md mb-4"><code>Authorization: Bearer YOUR_API_KEY</code></pre>
 
           <h3 className="text-xl font-semibold mb-2">API Endpoints</h3>
           <p>ZapFlow provides various API endpoints to manage your automations, integrations, and more. Here are some common endpoints:</p>
