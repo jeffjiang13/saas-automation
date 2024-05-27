@@ -49,13 +49,13 @@ const Navbar = ({ user }: Props) => {
             <Link className="hover:text-gray-300" href="/clients">Clients</Link>
           </li>
           <li>
-            <Link className="hover:text-gray-300" href="#">Resources</Link>
+            <Link className="hover:text-gray-300" href="/resources">Resources</Link>
           </li>
           <li>
-            <Link className="hover:text-gray-300" href="#">Documentation</Link>
+            <Link className="hover:text-gray-300" href="/documentation">Documentation</Link>
           </li>
           <li>
-            <Link className="hover:text-gray-300" href="#">Enterprise</Link>
+            <Link className="hover:text-gray-300" href="/enterprise">Enterprise</Link>
           </li>
         </ul>
       </nav>
@@ -84,22 +84,22 @@ const Navbar = ({ user }: Props) => {
         <nav className="absolute top-[57px] right-0 left-0 backdrop-blur-lg bg-black/20 dark:bg-black/80 p-4 md:hidden">
           <ul className="flex flex-col items-center gap-4 list-none">
             <li>
-              <Link href="#">Products</Link>
+              <Link href="/products">Products</Link>
             </li>
             <li>
-              <Link href="#">Pricing</Link>
+              <Link href="/pricing">Pricing</Link>
             </li>
             <li>
-              <Link href="#">Clients</Link>
+              <Link href="/clients">Clients</Link>
             </li>
             <li>
-              <Link href="#">Resources</Link>
+              <Link href="/resources">Resources</Link>
             </li>
             <li>
-              <Link href="#">Documentation</Link>
+              <Link href="/documentation">Documentation</Link>
             </li>
             <li>
-              <Link href="#">Enterprise</Link>
+              <Link href="/enterprise">Enterprise</Link>
             </li>
           </ul>
         </nav>
