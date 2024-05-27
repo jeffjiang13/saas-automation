@@ -6,6 +6,10 @@ export default authMiddleware({
     '/api/clerk-webhook',
     '/api/drive-activity/notification',
     '/api/payment/success',
+    "/pricing",
+    "/products",
+    "/clients",
+
   ],
   ignoredRoutes: [
     '/api/auth/callback/discord',

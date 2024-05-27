@@ -43,7 +43,7 @@ const Navbar = ({ user }: Props) => {
             <Link className="hover:text-gray-300" href="/products">Products</Link>
           </li>
           <li>
-            <Link className="hover:text-gray-300" href="pricing">Pricing</Link>
+            <Link className="hover:text-gray-300" href="/pricing">Pricing</Link>
           </li>
           <li>
             <Link className="hover:text-gray-300" href="/clients">Clients</Link>
