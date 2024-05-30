@@ -39,6 +39,8 @@ const ResourcesPage: React.FC = () => {
                   Privacy Policy
                 </span>
               </Link>
+            </li>
+            <li>
               <Link href="/terms">
                 <span className="text-blue-500 hover:underline" rel="noopener noreferrer">
                   Terms of Service
