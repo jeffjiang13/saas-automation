@@ -12,6 +12,9 @@ export default authMiddleware({
     "/resources",
     "/documentation",
     "/enterprise",
+    "privacy",
+    "terms",
+
 
   ],
   ignoredRoutes: [
