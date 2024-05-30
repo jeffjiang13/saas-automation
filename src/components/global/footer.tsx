@@ -19,7 +19,13 @@ const Footer = () => {
             />
             <p className="text-3xl font-bold">Flow</p>
           </aside>
-          <p>Contact us: info@zapflow.com</p>
+          <Link href="/privacy" className='hover:text-blue-500 hover:underline'>
+          <span>Privacy Policy</span>
+          </Link>
+          {" | "}
+          <Link href="/terms" className='hover:text-blue-500 hover:underline'>
+          <span>Terms of Service</span>
+          </Link>
         </div>
         <div>
           <div className="flex justify-center sm:justify-start space-x-6 py-2">

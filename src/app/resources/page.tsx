@@ -33,6 +33,13 @@ const ResourcesPage: React.FC = () => {
                 </span>
               </Link>
             </li>
+            <li>
+              <Link href="/privacy">
+                <span className="text-blue-500 hover:underline" rel="noopener noreferrer">
+                  Privacy Policy
+                </span>
+              </Link>
+            </li>
           </ul>
         </section>
         <section className="mb-8">
