@@ -27,8 +27,8 @@ const Navbar = ({ user }: Props) => {
   return (
     <header className="fixed right-0 left-0 top-0 p-2 md:p-3 bg-black/20 backdrop-blur-lg z-[100] flex items-center border-b-[1px] border-neutral-900 justify-between">
       <aside className="flex items-center gap-[1px]">
+      <Link href="/">
         <p className="text-3xl font-bold">Zap</p>
-        <Link href="/">
         <Image
           src="/fuzzieLogo.png"
           width={15}
@@ -36,8 +36,8 @@ const Navbar = ({ user }: Props) => {
           alt="logo"
           className="shadow-sm"
         />
-        </Link>
         <p className="text-3xl font-bold">Flow</p>
+        </Link>
       </aside>
       <nav className="hidden md:block">
         <ul className="flex items-center gap-6 list-none">
