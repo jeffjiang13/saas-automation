@@ -1,8 +1,8 @@
 {
-  "rewrites": [
+  "crons": [
     {
-      "source": "/api/start-ngrok",
-      "destination": "/src/app/api/start-ngrok.ts"
+      "path": "/api/start-ngrok",
+      "schedule": "0 * * * *"
     }
   ]
 }
