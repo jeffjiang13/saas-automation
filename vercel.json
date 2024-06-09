@@ -1,6 +1,8 @@
 {
-    "build": {
-      "src": "src/app/api/**/*",
-      "use": "@vercel/node"
+  "rewrites": [
+    {
+      "source": "/api/start-ngrok",
+      "destination": "/src/app/api/start-ngrok.ts"
     }
-  }
+  ]
+}
