@@ -5,7 +5,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   try {
     const url = await ngrok.connect({
       authtoken: process.env.NGROK_AUTHTOKEN,
-      addr: 'https://localhost:3000', // Ensure this is your local service
+      addr: 'https://localhost:3000',
       subdomain: 'neat-decent-mongrel'
     });
 
