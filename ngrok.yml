@@ -1,6 +1,15 @@
-authtoken: 2NemGio0nI3M9nsmB180RGT6kPM_47Hm9VVJheniWwsNRnTC
+authtoken: 2NemGio0nI3M9nsmB180RGT6kPM_47Hm9VVJheniWwsNRnTCc
+version: 2
 tunnels:
-  my-app:
+  your_tunnel_name:
     proto: http
-    addr: https://jj-zapflow.vercel.app
     hostname: neat-decent-mongrel.ngrok-free.app
+    addr: https://jj-zapflow.vercel.app
+
+    # -------------------------
+    # Additional options
+    # -------------------------
+    # auth: "username:password"
+    # host_header: rewrite
+    # inspect: true
+    # bind_tls: true
