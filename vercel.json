@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/api/start-ngrok",
-      "destination": "/src/app/api/start-ngrok.ts"
+      "destination": "/src/app/api/start-ngrok.tsx"
     }
   ]
 }
