@@ -15,12 +15,6 @@ export default authMiddleware({
     "/privacy",
     "/terms",
     '/api/cron',
-    '/api/auth/callback/discord', // Add this line
-    '/api/auth/callback/notion',
-    '/api/auth/callback/slack',
-
-
-
   ],
   ignoredRoutes: [
     '/api/auth/callback/discord',
