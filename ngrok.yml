@@ -1,0 +1,6 @@
+authtoken: 2NemGio0nI3M9nsmB180RGT6kPM_47Hm9VVJheniWwsNRnTC
+tunnels:
+  my-app:
+    proto: http
+    addr: https://jj-zapflow.vercel.app
+    hostname: neat-decent-mongrel.ngrok-free.app

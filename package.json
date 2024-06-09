@@ -7,7 +7,9 @@
     "build": "next build",
     "postinstall": "prisma generate",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "ngrok": "ngrok start --config=ngrok.yml"
+
   },
   "dependencies": {
     "@clerk/nextjs": "^4.29.9",
