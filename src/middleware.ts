@@ -16,7 +16,6 @@ export default authMiddleware({
     "/terms",
     '/api/start-ngrok',
     '/api/cron',
-    '/connections',
     '/api/auth/callback/discord', // Add this line
 
 
@@ -29,7 +28,6 @@ export default authMiddleware({
     '/api/flow',
     '/api/cron/wait',
     '/api/cron',
-    '/connections',
     '/api/auth/callback/discord', // Add this line
   ],
 })
