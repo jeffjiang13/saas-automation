@@ -9,7 +9,6 @@
     "start": "next start",
     "lint": "next lint",
     "ngrok": "ngrok start --config=ngrok.yml"
-
   },
   "dependencies": {
     "@clerk/nextjs": "^4.29.9",
@@ -42,6 +41,7 @@
     "lucide-react": "^0.358.0",
     "next": "14.1.3",
     "next-themes": "^0.3.0",
+    "ngrok": "^5.0.0-beta.2",
     "react": "^18",
     "react-dom": "^18",
     "react-hook-form": "^7.51.0",
