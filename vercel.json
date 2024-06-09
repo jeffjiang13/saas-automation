@@ -1,10 +1,8 @@
 {
-  "crons": [
-    {
-      "path": "/api/start-ngrok",
-      "schedule": "0 * * * *"
-    }
-  ],
+  "crons": [{
+    "path": "/api/cron",
+    "schedule": "0 10 * * *"
+  }],
   "rewrites": [
     {
       "source": "/api/start-ngrok",

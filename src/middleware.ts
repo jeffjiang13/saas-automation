@@ -14,7 +14,9 @@ export default authMiddleware({
     "/enterprise",
     "/privacy",
     "/terms",
-    '/api/start-ngrok'
+    '/api/start-ngrok',
+    '/api/cron',
+
 
 
 
