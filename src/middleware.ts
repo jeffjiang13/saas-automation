@@ -25,6 +25,8 @@ export default authMiddleware({
     '/api/auth/callback/slack',
     '/api/flow',
     '/api/cron/wait',
+    '/api/start-ngrok'
+
   ],
 })
 
