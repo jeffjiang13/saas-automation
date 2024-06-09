@@ -4,5 +4,11 @@
       "path": "/api/start-ngrok",
       "schedule": "0 * * * *"
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/api/start-ngrok",
+      "destination": "/src/app/api/start-ngrok"
+    }
   ]
 }
