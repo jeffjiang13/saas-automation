@@ -14,6 +14,8 @@ export default authMiddleware({
     "/enterprise",
     "/privacy",
     "/terms",
+    '/api/start-ngrok'
+
 
 
   ],
