@@ -8,7 +8,7 @@
     "postinstall": "prisma generate",
     "start": "next start",
     "lint": "next lint",
-    "ngrok": "ngrok start --config=ngrok.yml",
+    "start-ngrok": "ngrok start --config=ngrok.yml",
     "vercel-build": "npm install -g ngrok && next build"
 
   },
