@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-export async function GET(req: NextRequest): Promise<Response> {
+export async function GET(req: NextRequest): Promise<NextResponse> {
   try {
     // Your logic here
     return NextResponse.json({ message: 'Cron job executed successfully' });
