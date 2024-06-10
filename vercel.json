@@ -5,8 +5,8 @@
   }],
   "rewrites": [
     {
-      "source": "/api/start-ngrok",
-      "destination": "/src/app/api/start-ngrok"
+      "source": "/api/cron",
+      "destination": "/src/app/api/cron"
     }
   ]
 }
