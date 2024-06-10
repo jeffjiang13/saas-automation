@@ -1,17 +1,15 @@
 import { NextRequest, NextResponse } from 'next/server';
-import ngrok from 'ngrok';
+import { exec } from 'child_process';
 
 export async function GET(req: NextRequest) {
-  try {
-    const url = await ngrok.connect({
-      authtoken: process.env.NGROK_AUTHTOKEN,
-      addr: 'http://localhost:3000',
-      subdomain: 'neat-decent-mongrel'
+  return new Promise((resolve) => {
+    exec('ngrok start --none --log=stdout --authtoken=$NGROK_AUTHTOKEN', (error, stdout, stderr) => {
+      if (error) {
+        console.error(`Error: ${stderr}`);
+        resolve(NextResponse.json({ error: 'Failed to start ngrok' }, { status: 500 }));
+      } else {
+        resolve(NextResponse.json({ url: stdout.trim() }));
+      }
     });
-
-    return NextResponse.json({ url });
-  } catch (error) {
-    console.error('Failed to start ngrok:', error);
-    return NextResponse.json({ error: 'Failed to start ngrok' }, { status: 500 });
-  }
+  });
 }
