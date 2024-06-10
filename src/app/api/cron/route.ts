@@ -1,16 +1,17 @@
-import { NextRequest, NextResponse } from 'next/server';
+import type { NextApiRequest, NextApiResponse } from 'next';
 import ngrok from 'ngrok';
 
-export async function GET(req: NextRequest) {
+export async function GET(req: NextApiRequest, res: NextApiResponse) {
   try {
     const url = await ngrok.connect({
       authtoken: process.env.NGROK_AUTHTOKEN,
-      addr: 'https://localhost:3000',
+      addr: 'http://localhost:3000',
       subdomain: 'neat-decent-mongrel'
     });
 
-    return NextResponse.json({ url });
+    res.status(200).json({ url });
   } catch (error) {
-    return NextResponse.json({ error: 'Failed to start ngrok' }, { status: 500 });
+    console.error('Failed to start ngrok:', error);
+    res.status(500).json({ error: 'Failed to start ngrok' });
   }
 }

@@ -4,12 +4,4 @@ tunnels:
   your_tunnel_name:
     proto: http
     hostname: neat-decent-mongrel.ngrok-free.app
-    addr: https://jj-zapflow.vercel.app
-
-    # -------------------------
-    # Additional options
-    # -------------------------
-    # auth: "username:password"
-    # host_header: rewrite
-    # inspect: true
-    # bind_tls: true
+    addr: http://localhost:3000
