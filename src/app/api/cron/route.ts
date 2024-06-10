@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { exec } from 'child_process';
 
-export async function GET(req: NextRequest) {
+export async function GET(req: NextRequest): Promise<Response> {
   return new Promise((resolve) => {
     exec('ngrok start --none --log=stdout --authtoken=$NGROK_AUTHTOKEN', (error, stdout, stderr) => {
       if (error) {
