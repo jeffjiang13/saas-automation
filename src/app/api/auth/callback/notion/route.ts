@@ -42,10 +42,10 @@ export async function GET(req: NextRequest) {
         console.log(databaseId)
 
       return NextResponse.redirect(
-        `https://jj-zapflow.vercel.app/connections?access_token=${response.data.access_token}&workspace_name=${response.data.workspace_name}&workspace_icon=${response.data.workspace_icon}&workspace_id=${response.data.workspace_id}&database_id=${databaseId}`
+        `${process.env.NEXT_PUBLIC_URL}connections?access_token=${response.data.access_token}&workspace_name=${response.data.workspace_name}&workspace_icon=${response.data.workspace_icon}&workspace_id=${response.data.workspace_id}&database_id=${databaseId}`
       );
     }
   }
 
-  return NextResponse.redirect('https://jj-zapflow.vercel.app/connections');
+  return NextResponse.redirect(`${process.env.NEXT_PUBLIC_URL}connections`);
 }

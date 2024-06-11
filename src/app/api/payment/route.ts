@@ -29,8 +29,8 @@ export async function POST(req: NextRequest) {
     ],
     mode: 'subscription',
     success_url:
-      `https://jj-zapflow.vercel.app/billing?session_id={CHECKOUT_SESSION_ID}`,
-    cancel_url: 'https://jj-zapflow.vercel.app/billing',
+      `${process.env.NEXT_PUBLIC_URL}billing?session_id={CHECKOUT_SESSION_ID}`,
+    cancel_url: `${process.env.NEXT_PUBLIC_URL}billing`,
   })
   return NextResponse.json(session.url)
 }
