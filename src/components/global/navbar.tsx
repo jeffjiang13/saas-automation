@@ -26,21 +26,19 @@ const Navbar = ({ user }: Props) => {
 
   return (
     <header className="fixed right-0 left-0 top-0 p-2 md:p-3 bg-black/20 backdrop-blur-lg z-[100] flex items-center border-b-[1px] border-neutral-900 justify-between">
-              <Link href="/">
-
-      <aside className="flex items-center gap-[1px]">
-        <p className="text-3xl font-bold">Zap</p>
-        <Image
-          src="/fuzzieLogo.png"
-          width={15}
-          height={15}
-          alt="logo"
-          className="shadow-sm"
-        />
-        <p className="text-3xl font-bold">Flow</p>
-      </aside>
+        <Link href="/">
+        <aside className="flex items-center gap-[1px]">
+          <p className="text-3xl font-bold">Zap</p>
+          <Image
+            src="/fuzzieLogo.png"
+            width={15}
+            height={15}
+            alt="logo"
+            className="shadow-sm"
+          />
+          <p className="text-3xl font-bold">Flow</p>
+        </aside>
       </Link>
-
       <nav className="hidden md:block">
         <ul className="flex items-center gap-6 list-none">
           <li>
@@ -63,7 +61,7 @@ const Navbar = ({ user }: Props) => {
           </li>
         </ul>
       </nav>
-      <aside className="flex items-center gap-1 md:gap-3">
+      <aside className="flex items-center gap-[6px] md:gap-3">
         <Link
           href="/dashboard"
           className="relative inline-flex h-10 overflow-hidden rounded-full p-[2px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"

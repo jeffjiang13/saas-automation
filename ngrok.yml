@@ -1,7 +1,7 @@
-authtoken: 2NemGio0nI3M9nsmB180RGT6kPM_47Hm9VVJheniWwsNRnTCc
 version: 2
+authtoken: 2NemGio0nI3M9nsmB180RGT6kPM_47Hm9VVJheniWwsNRnTCc
 tunnels:
-  my_tunnel:
-    proto: https
-    hostname: neat-decent-mongrel.ngrok-free.app
-    addr: https://jj-zapflow.vercel.app
+  my_tunnel_name:
+    labels:
+      - edge=edghts_2hi1k85grRFRc6P7RHQ27nomtXi
+    addr: https://localhost:3000
