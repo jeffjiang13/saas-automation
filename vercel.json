@@ -1,8 +1,5 @@
 {
-  "crons": [
-    {
-      "path": "/api/cron",
-      "schedule": "0 10 * * *"
-    }
-  ]
+  "scripts": {
+    "vercel-build": "next build"
+  }
 }
