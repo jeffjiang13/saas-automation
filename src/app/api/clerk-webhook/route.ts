@@ -1,18 +1,8 @@
-import { NextApiRequest, NextApiResponse } from 'next';
 import { db } from '@/lib/db';
-import { createClerkUser, updateClerkUser } from '../../services/clerkService';
+import { NextResponse } from 'next/server';
 import crypto from 'crypto';
 
-interface ClerkEvent {
-  data: {
-    id: string;
-    email_addresses: { email_address: string }[];
-    first_name: string;
-    image_url: string;
-  };
-  type: string;
-}
-
+// Helper function to verify the webhook signature
 const verifySignature = (body: string, signature: string, secret: string): boolean => {
   const expectedSignature = crypto
     .createHmac('sha256', secret)
@@ -21,27 +11,22 @@ const verifySignature = (body: string, signature: string, secret: string): boole
   return expectedSignature === signature;
 };
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== 'POST') {
-    res.setHeader('Allow', ['POST']);
-    return res.status(405).end(`Method ${req.method} Not Allowed`);
-  }
-
+export async function POST(req: Request) {
   try {
-    const signature = req.headers['clerk-signature'] as string;
-    const body = JSON.stringify(req.body);
+    const body = await req.json();
+    const signature = req.headers.get('clerk-signature') as string;
+    const rawBody = JSON.stringify(body);
 
-    const isValidSignature = verifySignature(body, signature, process.env.CLERK_SECRET_KEY as string);
-
+    // Verify the signature
+    const isValidSignature = verifySignature(rawBody, signature, process.env.CLERK_WEBHOOK_SECRET as string);
     if (!isValidSignature) {
-      return res.status(400).json({ message: 'Invalid webhook signature' });
+      return new NextResponse('Invalid webhook signature', { status: 400 });
     }
 
-    const event: ClerkEvent = req.body;
-    const { id, email_addresses, first_name, image_url } = event.data;
-
+    const { id, email_addresses, first_name, image_url } = body?.data;
     const email = email_addresses[0]?.email_address;
-    console.log('✅', event);
+
+    console.log('✅', body);
 
     await db.user.upsert({
       where: { clerkId: id },
@@ -58,16 +43,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       },
     });
 
-    // Synchronize with Clerk
-    await updateClerkUser(id, {
-      email_address: email,
-      first_name: first_name,
-      image_url: image_url,
-    });
-
-    res.status(200).json({ message: 'User updated in database and Clerk successfully' });
+    return new NextResponse('User updated in database successfully', { status: 200 });
   } catch (error) {
-    console.error('Error updating database and Clerk:', error);
-    res.status(500).json({ message: 'Error updating user in database and Clerk' });
+    console.error('Error updating database:', error);
+    return new NextResponse('Error updating user in database', { status: 500 });
   }
 }
