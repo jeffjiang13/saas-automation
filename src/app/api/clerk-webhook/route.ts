@@ -28,19 +28,22 @@ export async function POST(req: Request) {
 
     console.log('✅', body);
 
-    await db.user.upsert({
+    await db.user.update({
       where: { clerkId: id },
-      update: {
+      data: {
         email,
         name: first_name,
         profileImage: image_url,
-      },
-      create: {
+      }
+    })
+
+    await db.user.create({
+      data:{
         clerkId: id,
         email,
         name: first_name || '',
         profileImage: image_url || '',
-      },
+      }
     });
 
     return new NextResponse('User updated in database successfully', { status: 200 });
