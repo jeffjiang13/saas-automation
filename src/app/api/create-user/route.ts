@@ -1,26 +1,24 @@
-import { NextApiRequest, NextApiResponse } from 'next';
+import { NextResponse } from 'next/server';
 import { onCompleteUserRegistration } from '../../services/clerkService';
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ message: `Method ${req.method} Not Allowed` });
-  }
-
+export async function POST(req: Request) {
   try {
-    const { email, first_name, image_url } = req.body;
+    const body = await req.json();
+    const { email, first_name, image_url } = body;
+
     if (!email || !first_name) {
-      return res.status(400).json({ message: 'Missing required fields' });
+      return NextResponse.json({ message: 'Missing required fields' }, { status: 400 });
     }
 
     const result = await onCompleteUserRegistration({ email, first_name, image_url });
 
     if (!result) {
-      return res.status(500).json({ message: 'Error creating user, result is null or undefined' });
+      return NextResponse.json({ message: 'Error creating user, result is null or undefined' }, { status: 500 });
     }
 
-    return res.status(result.status).json(result);
+    return NextResponse.json(result, { status: result.status });
   } catch (error:any) {
     console.error('Error creating user:', error);
-    return res.status(500).json({ message: 'Error creating user', error: error.message });
+    return NextResponse.json({ message: 'Error creating user', error: error.message }, { status: 500 });
   }
 }

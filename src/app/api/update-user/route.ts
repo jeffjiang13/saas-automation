@@ -1,26 +1,20 @@
-import { NextApiRequest, NextApiResponse } from 'next';
+import { NextResponse } from 'next/server';
 import { onUpdateClerkUser } from '../../services/clerkService';
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ message: `Method ${req.method} Not Allowed` });
-  }
-
+export async function POST(req: Request) {
   try {
-    const { userId, email, first_name, image_url } = req.body;
+    const body = await req.json();
+    const { userId, email, first_name, image_url } = body;
+
     if (!userId || (!email && !first_name && !image_url)) {
-      return res.status(400).json({ message: 'Missing required fields' });
+      return NextResponse.json({ message: 'Missing required fields' }, { status: 400 });
     }
 
     const result = await onUpdateClerkUser(userId, { email, first_name, image_url });
 
-    if (!result) {
-      return res.status(500).json({ message: 'Error updating user, result is null or undefined' });
-    }
-
-    return res.status(result.status).json(result);
+    return NextResponse.json(result, { status: result.status });
   } catch (error:any) {
     console.error('Error updating user:', error);
-    return res.status(500).json({ message: 'Error updating user', error: error.message });
+    return NextResponse.json({ message: 'Error updating user', error: error.message }, { status: 500 });
   }
 }
