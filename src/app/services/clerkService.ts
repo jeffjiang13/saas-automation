@@ -32,9 +32,9 @@ export const onCompleteUserRegistration = async (userData: UserData) => {
     if (registered) {
       return { status: 200, user: registered };
     }
-  } catch (error) {
+  } catch (error:any) {
     console.error('Registration error:', error);
-    return { status: 400, message: 'Error completing registration' };
+    return { status: 400, message: 'Error completing registration', error: error.message };
   }
 };
 

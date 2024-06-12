@@ -1,18 +1,26 @@
-import { NextResponse } from 'next/server';
+import { NextApiRequest, NextApiResponse } from 'next';
 import { onUpdateClerkUser } from '../../services/clerkService';
 
-export async function POST(req: Request) {
-  try {
-    const body = await req.json();
-    const { userId, email, first_name, image_url } = body;
-    if (!userId || (!email && !first_name && !image_url)) {
-      return NextResponse.json({ message: 'Missing required fields' }, { status: 400 });
-    }
-    const user = await onUpdateClerkUser(userId, { email, first_name, image_url });
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+  if (req.method !== 'POST') {
+    return res.status(405).json({ message: `Method ${req.method} Not Allowed` });
+  }
 
-    return NextResponse.json({ message: 'User updated successfully', user }, { status: 200 });
-  } catch (error) {
+  try {
+    const { userId, email, first_name, image_url } = req.body;
+    if (!userId || (!email && !first_name && !image_url)) {
+      return res.status(400).json({ message: 'Missing required fields' });
+    }
+
+    const result = await onUpdateClerkUser(userId, { email, first_name, image_url });
+
+    if (!result) {
+      return res.status(500).json({ message: 'Error updating user, result is null or undefined' });
+    }
+
+    return res.status(result.status).json(result);
+  } catch (error:any) {
     console.error('Error updating user:', error);
-    return NextResponse.json({ message: 'Error updating user', error }, { status: 500 });
+    return res.status(500).json({ message: 'Error updating user', error: error.message });
   }
 }
