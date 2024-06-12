@@ -1,6 +1,6 @@
 import type { Config } from 'tailwindcss'
 
-const config = {
+const config: Config = {
   darkMode: ['class'],
   content: [
     './pages/**/*.{ts,tsx}',
@@ -8,7 +8,6 @@ const config = {
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
   ],
-  prefix: '',
   theme: {
     container: {
       center: true,
@@ -19,10 +18,15 @@ const config = {
     },
     extend: {
       colors: {
+        background: {
+          DEFAULT: 'var(--background)',
+          light: '#E6E6FA', // Light purple for light mode
+          dark: 'hsl(var(--background))',
+        },
+        lightPurple: '#E6E6FA', // Light purple color
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
-        background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         primary: {
           DEFAULT: 'hsl(var(--primary))',
@@ -141,6 +145,6 @@ const config = {
     },
   },
   plugins: [require('tailwindcss-animate')],
-} satisfies Config
+}
 
 export default config
