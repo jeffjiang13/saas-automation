@@ -83,7 +83,7 @@ const Navbar = ({ user }: Props) => {
         </button>
       </aside>
       {isMobileMenuOpen && (
-        <nav className="absolute top-[57px] right-0 left-0 backdrop-blur-lg bg-black/20 dark:bg-black/80 p-4 md:hidden">
+        <nav className="absolute top-[57px] right-0 left-0 backdrop-blur-lg bg-black/10 dark:bg-black/80 p-4 md:hidden">
           <ul className="flex flex-col items-center gap-4 list-none">
             <li>
               <Link href="/products">Products</Link>
