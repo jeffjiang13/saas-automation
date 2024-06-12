@@ -15,6 +15,8 @@ export default authMiddleware({
     "/privacy",
     "/terms",
     '/api/cron',
+    '/api/create-user',  // Add this route if it should be publicly accessible
+    '/api/update-user'   // Add this route if it should be publicly accessible
   ],
   ignoredRoutes: [
     '/api/auth/callback/discord',
