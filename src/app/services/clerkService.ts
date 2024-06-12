@@ -1,40 +1,57 @@
-import axios from 'axios';
+'use server';
 
-const clerkApiBaseUrl = 'https://api.clerk.dev/v1';
-const clerkApiKey = process.env.CLERK_SECRET_KEY as string;
+import { db } from '@/lib/db';
+import { currentUser } from '@clerk/nextjs';
 
 interface UserData {
-  email_address: string;
+  email: string;
   first_name: string;
   image_url: string;
 }
 
-export const createClerkUser = async (userData: UserData) => {
+export const onCompleteUserRegistration = async (userData: UserData) => {
   try {
-    const response = await axios.post(`${clerkApiBaseUrl}/users`, userData, {
-      headers: {
-        Authorization: `Bearer ${clerkApiKey}`,
-        'Content-Type': 'application/json',
+    const user = await currentUser();
+    if (!user) {
+      throw new Error('No current user');
+    }
+
+    const registered = await db.user.create({
+      data: {
+        clerkId: user.id,
+        email: userData.email,
+        name: userData.first_name || '',
+        profileImage: userData.image_url || '',
+      },
+      select: {
+        name: true,
+        id: true,
       },
     });
-    return response.data;
-  } catch (error:any) {
-    console.error('Error creating Clerk user:', error.response?.data);
-    throw error;
+
+    if (registered) {
+      return { status: 200, user: registered };
+    }
+  } catch (error) {
+    console.error('Registration error:', error);
+    return { status: 400, message: 'Error completing registration' };
   }
 };
 
-export const updateClerkUser = async (userId: string, updatedData: Partial<UserData>) => {
+export const onUpdateClerkUser = async (userId: string, userData: Partial<UserData>) => {
   try {
-    const response = await axios.patch(`${clerkApiBaseUrl}/users/${userId}`, updatedData, {
-      headers: {
-        Authorization: `Bearer ${clerkApiKey}`,
-        'Content-Type': 'application/json',
+    const updatedUser = await db.user.update({
+      where: { clerkId: userId },
+      data: {
+        email: userData.email,
+        name: userData.first_name,
+        profileImage: userData.image_url,
       },
     });
-    return response.data;
-  } catch (error:any) {
-    console.error('Error updating Clerk user:', error.response?.data);
-    throw error;
+
+    return { status: 200, user: updatedUser };
+  } catch (error) {
+    console.error('Update error:', error);
+    return { status: 400, message: 'Error updating user' };
   }
 };
