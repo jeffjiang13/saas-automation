@@ -20,7 +20,7 @@ const MenuOptions = (props: Props) => {
   const pathName = usePathname()
 
   return (
-    <nav className=" dark:bg-black h-screen overflow-scroll  justify-between flex items-center flex-col  gap-10 py-6 px-2">
+    <nav className=" dark:bg-black bg-[#E6E6FA] h-screen overflow-scroll  justify-between flex items-center flex-col gap-10 py-6 px-2">
       <div className="flex items-center justify-center flex-col gap-8">
         <Link
           className="flex font-bold flex-row "
@@ -39,7 +39,7 @@ const MenuOptions = (props: Props) => {
                       className={clsx(
                         'group h-8 w-8 flex items-center justify-center  scale-[1.5] rounded-lg p-[3px]  cursor-pointer',
                         {
-                          'dark:bg-[#2F006B] bg-[#EEE0FF] ':
+                          'dark:bg-[#2F006B] bg-[#e4cdff] ':
                             pathName === menuItem.href,
                         }
                       )}
