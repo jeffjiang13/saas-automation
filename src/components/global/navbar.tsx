@@ -42,22 +42,22 @@ const Navbar = ({ user }: Props) => {
       <nav className="hidden md:block">
         <ul className="flex items-center gap-6 list-none">
           <li>
-            <Link className="hover:text-gray-300" href="/products">Products</Link>
+            <Link className="hover:text-purple-300 dark:hover:text-gray-300" href="/products">Products</Link>
           </li>
           <li>
-            <Link className="hover:text-gray-300" href="/pricing">Pricing</Link>
+            <Link className="hover:text-purple-300 dark:hover:text-gray-300" href="/pricing">Pricing</Link>
           </li>
           <li>
-            <Link className="hover:text-gray-300" href="/clients">Clients</Link>
+            <Link className="hover:text-purple-300 dark:hover:text-gray-300" href="/clients">Clients</Link>
           </li>
           <li>
-            <Link className="hover:text-gray-300" href="/resources">Resources</Link>
+            <Link className="hover:text-purple-300 dark:hover:text-gray-300" href="/resources">Resources</Link>
           </li>
           <li>
-            <Link className="hover:text-gray-300" href="/documentation">Documentation</Link>
+            <Link className="hover:text-purple-300 dark:hover:text-gray-300" href="/documentation">Documentation</Link>
           </li>
           <li>
-            <Link className="hover:text-gray-300" href="/enterprise">Enterprise</Link>
+            <Link className="hover:text-purple-300 dark:hover:text-gray-300" href="/enterprise">Enterprise</Link>
           </li>
         </ul>
       </nav>

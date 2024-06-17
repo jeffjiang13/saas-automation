@@ -23,6 +23,8 @@ const config: Config = {
           light: '#E6E6FA', // Light purple for light mode
           dark: 'hsl(var(--background))',
         },
+        purpleStart: '#8A2BE2', // Example starting purple color
+        purpleEnd: '#4B0082',   // Example ending purple color
         lightPurple: '#E6E6FA', // Light purple color
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
