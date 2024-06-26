@@ -17,7 +17,10 @@ const ChatbotIframe = () => {
         bottom: 20px;
         right: 20px;
         border: none;
-        z-index: 999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
+        z-index: 999;
+        max-width: 350px;
+        max-height: 646px;
+        border-radius: 10px;
       }
     `);
 
